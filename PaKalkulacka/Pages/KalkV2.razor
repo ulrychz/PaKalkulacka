@@ -1,0 +1,34 @@
+﻿@page "/kalkV2"
+
+<PageTitle>Kalkulačka v2</PageTitle>
+
+<h1>Základní matematické operace verze 2</h1>
+<hr />
+
+<div>
+	<label>Číslo 1: <input type="number" @bind-value="Cislo1" @bind-value:event="oninput"></label>
+	<br />
+	<label>Číslo 2: <input type="number" @bind-value="Cislo2" @bind-value:event="oninput"></label>
+</div>
+
+<div class="m-3">
+	<button @onclick="Soucet" class="btn btn-primary" style="width:130px">Součet (+)</button>
+	<button @onclick="Rozdil" class="btn btn-success" style="width:130px">Rozdíl (-)</button>
+	<button @onclick="Soucin" class="btn btn-warning" style="width:130px">Součin (*)</button>
+	<button @onclick="Podil" class="btn btn-danger" style="width:130px">Podíl (/)</button>
+</div>
+
+<div>
+	<label>Výsledek: <input type="number" @bind-value="vysledek" disabled></label>
+</div>
+
+@if (chybaText != "")
+{
+	<div class="alert alert-danger mt-3">
+		<strong>Chyba!</strong> @chybaText
+	</div>
+}
+
+@code {
+
+}
